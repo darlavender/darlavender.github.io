@@ -1,6 +1,9 @@
 const menuBtn = document.getElementById("menu-btn");
 const navLinks = document.getElementById("nav-links");
 const menuBtnIcon = menuBtn.querySelector("i");
+const navBar = document.querySelector("nav");
+
+
 
 menuBtn.addEventListener("click", () => {
   navLinks.classList.toggle("open");
@@ -13,6 +16,23 @@ navLinks.addEventListener("click", () => {
   navLinks.classList.remove("open");
   menuBtnIcon.setAttribute("class", "ri-menu-line");
 });
+
+// Auto close navbar when user scrolls
+window.addEventListener("scroll", () => {
+  if (navLinks.classList.contains("open")) {
+    navLinks.classList.remove("open");
+    menuBtnIcon.setAttribute("class", "ri-menu-line");
+  }
+
+  // Change navbar background color based on scroll position
+  const scrollHeight = window.innerHeight * 0.04;
+  if (window.scrollY > scrollHeight) {
+    navBar.style.backgroundColor = "var(--primary-color-dark)";
+  } else {
+    navBar.style.backgroundColor = "transparent";
+  }
+});
+
 
 const scrollRevealOption = {
   distance: "50px",
