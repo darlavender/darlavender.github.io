@@ -1,33 +1,76 @@
-/* Gallery Grid */
-.gallery__grid {
+.container11 {
+    width: 100%;
     display: grid;
-    gap: 10px; /* Adjust gap between images as needed */
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive columns */
+    grid-auto-flow: dense;
+    grid-template:
+      "1fr 1fr 1fr 1fr 1fr" 33.33vh
+      "1fr 1fr 1fr 1fr 1fr" 33.33vh
+      "1fr 1fr 1fr 1fr 1fr" 33.33vh;
   }
   
-  /* Styles for individual gallery items */
-  .gallery__item {
-    overflow: hidden; /* Hide overflow for contained images */
-    position: relative; /* Position relative for image adjustment */
+  .container11 .box11 {
+    position: relative;
+    background: #ccc;
   }
-  
-  /* Styles for images within gallery items */
-  .gallery__item img {
-    width: 100%; /* Full width images */
-    height: 100%; /* Full height images */
-    object-fit: cover; /* Ensure images cover the container */
-    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+  .container11 .box11.a {
+    grid-row: span 2;
   }
-  
-  /* Zoom effect on hover for gallery images */
-  .gallery__item:hover img {
-    transform: scale(1.1); /* Slight zoom on hover */
+  .container11 .box11.b,
+  .container11 .box11.f,
+  .container11 .box11.h,
+  .container11 .box11.j {
+    grid-column: span 2;
   }
-  
-  /* Optional: Style adjustments for better aesthetics */
-  .gallery__grid {
-    margin: 0 auto; /* Center the grid */
-    max-width: 1200px; /* Limit max width for larger screens */
-    padding: 0 10px; /* Add some padding */
+  .container11 .box11 img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* .box11 .a .b .c .d .e .f .g .h .i .j{
+    transition: all 1s ease-in-out;
+    background-size: cover;
+    background-position: top;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #222;
+    background-blend-mode: hard-light;
+  }
+
+  .box11 .a .b .c .d .e .f .g .h .i j:hover{
+    background-color: #999;
+    background-position: center;
+    box-shadow: 0 0 4px #fff;
+  } */
+
+  @media (max-width: 991px) {
+    .container11 {
+      grid-template:
+        "1fr 1fr 1fr" 250px
+        "1fr 1fr 1fr" 250px
+        "1fr 1fr 1fr" 250px
+        "1fr 1fr 1fr" 250px
+        "1fr 1fr 1fr" 250px;
+    }
+  }
+  @media (max-width: 768px) {
+    .container11 {
+      grid-template:
+        "1fr 1fr" 200px
+        "1fr 1fr" 200px
+        "1fr 1fr" 200px
+        "1fr 1fr" 200px
+        "1fr 1fr" 200px
+        "1fr 1fr" 200px
+        "1fr 1fr" 200px;
+    }
+  }
+  .container11 .box11.h {
+    grid-column: span 1;
   }
   
